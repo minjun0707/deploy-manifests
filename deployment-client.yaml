@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client
+spec:
+  replicas: 2
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: client
+  template:
+    metadata:
+      labels:
+        app: client
+    spec:
+      containers:
+        - image: CLIENT_IMAGE:TAG
+          name: kakaocloud-library-client
+          ports:
+            - containerPort: 80
+          env:
+            - name: SERVER_ENDPOINT
+              value: "http://server.kakaocloud-library.svc.cluster.local:8080"
+      imagePullSecrets:
+        - name: kc-tutorial-cr
