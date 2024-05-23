@@ -14,14 +14,14 @@ spec:
         app: server
     spec:
       containers:
-        - image: kc-docs.kr-central-2.kcr.dev/tutorial-ocean/kakaocloud-library-server:3d77224f3550dc19890660bd048916910bd766a8
-          name: kakaocloud-library-server
-          ports:
-            - containerPort: 8080
-          env:
-            - name: PROFILE
-              value: "local"
-            - name: SERVER_PORT
-              value: "8080"
+      - image: SERVER_IMAGE:TAG
+        name: kakaocloud-library-server
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PROFILE
+          value: "local"
+        - name: SERVER_PORT
+          value: "8080"
       imagePullSecrets:
         - name: kc-tutorial-cr
