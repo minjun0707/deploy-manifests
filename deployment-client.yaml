@@ -14,7 +14,7 @@ spec:
         app: client
     spec:
       containers:
-        - image: kc-docs.kr-central-2.kcr.dev/tutorial/kakaocloud-library-client:e58fd395b854f8302655095dc6514593b6ab8508
+        - image: kc-docs.kr-central-2.kcr.dev/tutorial/kakaocloud-library-client:27c9a7fd52b2ed5b12ee98cde60e76a17bbe0aeb
           name: kakaocloud-library-client
           ports:
             - containerPort: 80
